@@ -26,6 +26,7 @@ mod tabs;
 #[cfg(feature = "firefox")]
 mod theme;
 mod windows;
+mod notifications;
 
 pub use action::*;
 pub use bookmarks::*;
@@ -38,6 +39,7 @@ pub use context_menus::*;
 pub use downloads::*;
 pub use history::*;
 pub use identity::*;
+pub use notifications::*;
 pub use omnibox::*;
 pub use port::*;
 pub use runtime::*;
@@ -136,6 +138,9 @@ extern "C" {
 
     #[wasm_bindgen(method, getter, js_name = contextMenus)]
     pub fn context_menus(this: &Browser) -> ContextMenus;
+
+    #[wasm_bindgen(method, getter)]
+    pub fn notifications(this: &Browser) -> Notifications;
 }
 
 #[wasm_bindgen]
