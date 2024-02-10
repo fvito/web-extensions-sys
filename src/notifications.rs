@@ -18,7 +18,7 @@ extern "C" {
     pub fn create(
         this: &Notifications,
         notification_id: &JsValue,
-        options: Option<&Object>,
+        options: &Object,
         callback: Option<&Function>,
     ) -> JsValue;
 
