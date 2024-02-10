@@ -1,7 +1,7 @@
 use js_sys::{Function, Object};
 use wasm_bindgen::JsValue;
 use wasm_bindgen::prelude::wasm_bindgen;
-use crate::{ContextMenus, EventTarget};
+use crate::{EventTarget};
 
 #[wasm_bindgen]
 extern "C" {
