@@ -10,7 +10,6 @@ mod browser_action;
 mod commands;
 #[cfg(feature = "firefox")]
 mod contextual_identities;
-mod context_menus;
 mod downloads;
 mod history;
 mod identity;
@@ -35,7 +34,6 @@ pub use browser_action::*;
 pub use commands::*;
 #[cfg(feature = "firefox")]
 pub use contextual_identities::*;
-pub use context_menus::*;
 pub use downloads::*;
 pub use history::*;
 pub use identity::*;
@@ -135,9 +133,6 @@ extern "C" {
 
     #[wasm_bindgen(method, getter)]
     pub fn omnibox(this: &Browser) -> Omnibox;
-
-    #[wasm_bindgen(method, getter, js_name = contextMenus)]
-    pub fn context_menus(this: &Browser) -> ContextMenus;
 
     #[wasm_bindgen(method, getter)]
     pub fn notifications(this: &Browser) -> Notifications;
