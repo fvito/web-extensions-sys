@@ -30,7 +30,6 @@ extern "C" {
     #[wasm_bindgen(method, js_name=getPermissionLevel)]
     pub async fn get_permission_level(
         this: &Notifications,
-        callback: Option<&Function>,
     ) -> JsValue;
 
     #[wasm_bindgen(method)]
