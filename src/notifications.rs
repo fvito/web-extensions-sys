@@ -1,43 +1,41 @@
 use js_sys::{Function, Object};
 use wasm_bindgen::JsValue;
 use wasm_bindgen::prelude::wasm_bindgen;
-use crate::{ContextMenus, EventTarget};
+use crate::{EventTarget};
 
 #[wasm_bindgen]
 extern "C" {
     pub type Notifications;
 
     #[wasm_bindgen(method)]
-    pub fn clear(
+    pub async fn clear(
         this: &Notifications,
-        notification_id: &JsValue,
+        notification_id: &str,
         callback: Option<&Function>,
-    );
+    ) -> JsValue;
 
     #[wasm_bindgen(method)]
-    pub fn create(
+    pub async fn create(
         this: &Notifications,
-        notification_id: &JsValue,
-        options: Option<&Object>,
+        notification_id: Option<&str>,
+        options: &Object,
         callback: Option<&Function>,
     ) -> JsValue;
 
     #[wasm_bindgen(method, js_name=getAll)]
-    pub fn get_all(
+    pub async fn get_all(
         this: &Notifications,
-        callback: Option<&Function>,
-    );
+    ) -> JsValue;
 
     #[wasm_bindgen(method, js_name=getPermissionLevel)]
-    pub fn get_permission_level(
+    pub async fn get_permission_level(
         this: &Notifications,
-        callback: Option<&Function>,
-    );
+    ) -> JsValue;
 
     #[wasm_bindgen(method)]
-    pub fn update(
+    pub async fn update(
         this: &Notifications,
-        notification_id: &JsValue,
+        notification_id: &str,
         options: &Object,
         callback: Option<&Function>,
     ) -> JsValue;
