@@ -10,9 +10,9 @@ extern "C" {
     #[wasm_bindgen(method)]
     pub async fn clear(
         this: &Notifications,
-        notification_id: &JsValue,
+        notification_id: &str,
         callback: Option<&Function>,
-    );
+    ) -> JsValue;
 
     #[wasm_bindgen(method)]
     pub async fn create(
@@ -25,14 +25,13 @@ extern "C" {
     #[wasm_bindgen(method, js_name=getAll)]
     pub async fn get_all(
         this: &Notifications,
-        callback: Option<&Function>,
-    );
+    ) -> JsValue;
 
     #[wasm_bindgen(method, js_name=getPermissionLevel)]
     pub async fn get_permission_level(
         this: &Notifications,
         callback: Option<&Function>,
-    );
+    ) -> JsValue;
 
     #[wasm_bindgen(method)]
     pub async fn update(
