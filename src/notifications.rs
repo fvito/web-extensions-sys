@@ -17,7 +17,7 @@ extern "C" {
     #[wasm_bindgen(method)]
     pub fn create(
         this: &Notifications,
-        notification_id: &JsValue,
+        notification_id: Option<&str>,
         options: &Object,
         callback: Option<&Function>,
     ) -> JsValue;
@@ -37,7 +37,7 @@ extern "C" {
     #[wasm_bindgen(method)]
     pub fn update(
         this: &Notifications,
-        notification_id: &JsValue,
+        notification_id: &str,
         options: &Object,
         callback: Option<&Function>,
     ) -> JsValue;
